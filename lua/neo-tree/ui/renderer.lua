@@ -891,6 +891,8 @@ local function create_floating_window(state, win_options, bufname)
     win_options.position = utils.resolve_config_option(state, "window.popup.position", "50%")
     win_options.border = utils.resolve_config_option(state, "window.popup.border", b)
 
+    win_options.win_options = utils.resolve_config_option(state, "window.win_options", nil)
+
     win = NuiPopup(win_options)
     win:mount()
     win.source_name = state.name
